@@ -42,20 +42,20 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 __attribute__((weak)) void oled_task_user(void) {
 	oled_write_P(PSTR("\n\n"), false);
-	oled_write_ln_P(PSTR("LAYER"), false);
+	oled_write_ln_P(PSTR("layer"), false);
 	oled_write_ln_P(PSTR(""), false);
 	switch (get_highest_layer(layer_state)) {
 		case _BASE:
-			oled_write_P(PSTR("BASE\n"), false);
+			oled_write_P(PSTR("base\n"), false);
 			break;
 		case _RAISE:
-			oled_write_P(PSTR("RAISE\n"), false);
+			oled_write_P(PSTR("nav\n"), false);
 			break;
 		case _LOWER:
-			oled_write_P(PSTR("LOWER\n"), false);
+			oled_write_P(PSTR("num\n"), false);
 			break;
 		case _ADJUST:
-			oled_write_P(PSTR("ADJ\n"), false);
+			oled_write_P(PSTR("fn\n"), false);
 			break;
 	}
 }
